@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Typing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image" href="image/aa.png">
+</head>
+
+<body>
+    <section>
+    <div>
+        <img src="image/aa.png" alt="logo" class="Ahrom">
+    </div>
+</section>
+<section>
+    <div></div>
+    <div id="testConfig" class="full-width">
+        <div class="row">
+            <div class="button-group">
+                <span class="a">Time:</span>
+                <div class="textButton" onclick="setTime(15)"><span>15</span></div>
+                <div class="textButton" onclick="setTime(30)"><span>30</span></div>
+                <div class="textButton" onclick="setTime(60)"><span>60</span></div>
+                <div class="textButton" onclick="setTime(180)"><span>180</span></div>
+                <div class="textButton" onclick="setTime(360)"><span>360</span></div>
+            </div>
+            <span class="divider">|</span>
+            <div class="spacer"></div>
+            <div class="textButton" onclick="setMode('word')">Word</div>
+            <span class="divider">|</span>
+            <div class="spacer"></div>
+            &nbsp;&nbsp;
+            <span class="a">Mode:</span>
+            <div class="textButton" onclick="setMode('beginner')">Beginner</div>
+            <div class="textButton" onclick="setMode('advanced')">Advanced</div>
+            <div class="textButton" onclick="setMode('mastery')">Mastery</div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <input type="text" class="input-field">
+        <div class="content-box">
+            <div class="typing-text">
+                <p id="paragraph"></p>
+            </div>
+            <div class="content">
+                <ul class="result-details">
+                    <li class="time">
+                        <p>
+                            Time Left:
+                        </p>
+                        <span><b id="time-left">60</b>s</span>
+                    </li>
+                    <li class="mistake">
+                        <p>
+                            Mistakes:
+                        </p>
+                        <span id="mistakes">0</span>
+                    </li>
+                    <li class="wpm">
+                        <p>
+                            WPM:
+                        </p>
+                        <span id="wpm">0</span>
+                    </li>
+                    <li class="cpm">
+                        <p>
+                            CPM:
+                        </p>
+                        <span id="cpm">0</span>
+                    </li>
+                </ul>
+                <div>
+                    <br><br> <br><br>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <button class="restart-button">Try Again</button>     </div>
+        <!-- nihao -->
+        <div id="resultModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modalResult"></div>
+                <canvas id="modalResultChart"></canvas>
+                <button id="restartButton">Restart</button>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="script.js" defer></script>
+
+</html>

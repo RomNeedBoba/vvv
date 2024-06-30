@@ -1,0 +1,542 @@
+/* Existing CSS */
+@font-face {
+    font-family: 'Graphik Medium';
+    src: url('path/to/wfont_6c5a17_50f47e5542944300b32e0d7887baabb2.woff2') format('woff2'),
+         url('path/to/wf_50f47e5542944300b32e0d788.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.Ahrom {
+    height: 58px;
+    position: relative; 
+    top: -220px; 
+    margin-right: 1200px;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#1e1e1e, #1e1e1e, #1e1e1e);
+    position: relative;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #1a1a1a;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+
+.title {
+    font-size: 24px;
+    margin: 0;
+    color: white;
+}
+.restart-button {
+    background-color: #cfcfcf; /* blue background */
+    color: #333; /* white text */
+    border: none;
+    margin-left: -20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Graphik Medium', sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* add transition effect */
+    text-decoration: none;
+}
+
+#paragraph {
+    color: #646669;
+}
+
+.result-details {
+    color: white;
+}
+
+::selection {
+    background: #1e1e1e;
+}
+.input-field {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+    width: 1px;
+    height: 1px;
+}
+
+.wrapper {
+    width: 1000px;
+    padding: 25px;
+    background: #1e1e1e;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05); */
+    margin-top: -35px; /* Adjusted to add more space for fixed header */
+}
+
+.wrapper .input-field {
+    opacity: 0;
+    z-index: -999;
+    position: absolute;
+}
+.content {
+    text-align: center;
+}
+
+.wrapper .content-box {
+    padding: 13px 20px 0;
+    border-radius: 10px;
+}
+
+.content-box .typing-text {
+    
+    overflow: hidden;
+    max-height: 256px;
+    margin-top: 20px;
+}
+.typing-text {
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.typing-text p {
+    font-size: 21px;
+    text-align: justify;
+    letter-spacing: 1px;
+    word-break: break-word;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; 
+    overflow: hidden;
+}
+
+.typing-text::-webkit-scrollbar {
+    width: 0;
+}
+.typing-text p span {
+    position: relative;
+    color: #84888b;
+}
+
+.typing-text p span.correct {
+    color: #d1d0c5;
+}
+
+.typing-text p span.incorrect {
+    color: #ca4754;
+    border-radius: 4px;
+}
+
+.typing-text p span.active::before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: 5px;
+    background: #f1f1f1;
+    animation: blink 1s ease-in-out infinite;
+}
+.input-field {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: inherit;
+    padding: 8px;
+    width: 100%;
+}
+
+
+@keyframes blink {
+    50% {
+        opacity: 1;
+    }
+}
+
+.content-box .content {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-group span {
+    /* color: white; */
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 35px;
+}
+.button-group span.a{
+    color: #f1f1f1;
+}
+
+.button-group button {
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    outline: none;
+    border: none;
+    color: #84888b;
+    padding: 8px 15px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid #84888b;
+    background: none;
+}
+
+.button-group button.active {
+    background-color: #f1f1f1;
+    color: #1e1e1e;
+}
+
+.result-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.result-details li {
+    display: flex;
+    height: 20px;
+    list-style: none;
+    position: relative;
+    align-items: center;
+}
+
+.result-details li:not(:first-child) {
+    padding-left: 20px;
+    border-left: 2px solid #bfbfbf;
+}
+
+.result-details li p {
+    font-size: 13px;
+}
+
+.result-details li span {
+    display: block;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+li span b {
+    font-weight: 500;
+}
+
+li:not(:first-child) span {
+    font-weight: 500;
+}
+.button-containerz {
+    display: flex;
+    justify-content: center;
+    margin: 0; 
+}
+
+
+@media (max-width: 745px) {
+    .wrapper {
+        padding: 20px;
+    }
+
+    .content-box .content {
+        padding: 20px 0;
+    }
+
+    .content-box .typing-text {
+        max-height: 100%;
+    }
+
+    .typing-text p {
+        font-size: 21px;
+        text-align: justify;
+        letter-spacing: 1px;
+        word-break: break-all;
+        width: auto;
+        margin: 0 auto; /* Center align the paragraph */
+        max-height: 4.5em; /* Limit to approximately 4-5 lines */
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* Limit number of lines */
+        -webkit-box-orient: vertical;
+    }
+    
+
+    .button-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: center; /* Add this line to center align the buttons */
+    }
+    
+
+    .result-details li:not(:first-child) {
+        border-left: 0;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .result-details li p,
+    .result-details li span {
+        font-size: 15px;
+    }
+}
+.result-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    display: none;
+  }
+  
+  #graph {
+    width: 100%;
+    height: 200px;
+    margin: 20px auto;
+  }
+  
+  .chart-container {
+    width: 100%;
+    height: 200px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chart-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .chart-label {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  #next-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #next-btn:hover {
+    background-color: #3e8e41;
+  }
+/* Add styles for the modal container */
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.correct {
+    color: #5cb85c;
+}
+
+.incorrect {
+    color: #d9534f;
+}
+
+canvas {
+    margin-top: 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    font-family: 'Graphik Medium', sans-serif;
+    color: #fff;
+}
+
+.modal-content {
+  background-color: #3c3c3c;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #888;
+  width: calc(100% - 40px); /* adjust width to fit browser page */
+  max-width: 600px;
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+  margin-top: 200px;
+  margin-left: 550px;
+  font-family: 'Graphik Medium', sans-serif;
+}
+
+#graph {
+  width: 100%; /* make graph full-width */
+  height: 300px;
+}
+
+.result-spans {
+    font-family: 'Graphik Medium', sans-serif;
+  display: flex; /* align result spans horizontally */
+  flex-direction: row;
+  justify-content: space-between; /* distribute spans evenly */
+  margin-top: 20px;
+}
+
+.result-spans span {
+  flex: 1; /* make each span equally wide */
+}a
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+#restartButton {
+    font-size: 24px; /* increase font size */
+    padding: 20px 40px; /* add more padding to make the button larger */
+    border-radius: 10px; /* add some rounded corners to the button */
+    background-color: #4CAF50; /* change the background color to a nice green */
+    color: #ffffff; /* change the text color to white */
+    cursor: pointer; /* add a pointer cursor on hover */
+    border: none; /* remove the default button border */
+  }
+  
+  #restartButton:hover {
+    background-color: #3e8e41; /* change the background color on hover */
+  }
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 518px) {
+    .wrapper .content-box {
+        padding: 10px 15px 0;
+    }
+
+    .typing-text p {
+        font-size: 18px; /* Further reduce font size for smaller screens */
+    }
+
+    .result-details li {
+        margin-bottom: 10px;
+    }
+
+    .button-group {
+        margin-top: 10px;
+    }
+}
+
+/* Additional styles for #testConfig integration */
+
+#testConfig {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#testConfig .row {
+    display: flex;
+    align-items: center;
+}
+
+#testConfig .button-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#testConfig .textButton {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    cursor: pointer;
+    color: #84888b;
+    border-radius: 15px;
+    /* border: 2px solid #84888b; */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 17px;
+    font-weight: 600;
+}
+#testConfig .textButton span.active {
+    color: #f1f1f1;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 35px;
+  }
+#testConfig .a{
+    color: #f1f1f1;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 35px;
+}
+#testConfig .divider{
+    color: #f1f1f1;
+}
+
+/* Remove the empty ruleset */
+
+#testConfig .spacer {
+    flex: 1;
+}
+
